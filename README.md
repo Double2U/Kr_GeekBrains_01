@@ -83,5 +83,10 @@ Console.Write($"{newArrayString[i]} ");
 }
 ```
 
+### Результаты
 
+![test1.png](test1.png)
+![test2.png](test2.png)
+![test3.png](test3.png)
 
+По результам видно, что программа работает корректно. Задача решена!
