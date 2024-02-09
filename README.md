@@ -73,3 +73,8 @@ while (j < count){
 }
 }
 ```
+### Вывод нового массива
+С помощью команды *Console.WriteLine* выведем новый массив
+```
+Console.WriteLine(newArrayString)
+```
