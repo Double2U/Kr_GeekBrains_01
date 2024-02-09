@@ -20,8 +20,9 @@
 Чтобы пользователь понял, что нужно ввести данные необходимо сделать соотвествующий запрос. С помощью команды *Console.WriteLine* попросим пользователя ввести длину массива и сохраним полученное значение в переменную *lengthArrayString*
 ```
 Console.WriteLine("Введите длину массива:");
-int lengthArrayString = Console.ReadLine();
+int lengthArrayString = int.Parse(Console.ReadLine());
 ```
+int.Parse переводит число в типе string в тип integer.
 Создадим массив строк длиной lengthArrayString
 ```
 string [] arrayString = new string [lengthArrayString]
@@ -43,16 +44,16 @@ for (int i = 0 ; i < lengthArrayString; i++) {
 int count = 0; // количество строк
 int maxLengthString = 3; // максимальная длина строки(символа)
 ```
-Используем цикл *for* внутри которого при каждой итерации будет выполняться условие: длина строки массива arrayString < максимальной длины строки maxLengthString. Если да, то будем увеличивать переменную count на 1, иначе просто переходить к следующей итерации, до тех пор пока не пройдёмся по всему массиву arrayString.
+Используем цикл *for* внутри которого при каждой итерации будет выполняться условие: длина строки массива arrayString <= максимальной длины строки maxLengthString. Если да, то будем увеличивать переменную count на 1, иначе просто переходить к следующей итерации, до тех пор пока не пройдёмся по всему массиву arrayString.
 
 ```
 for (int i = 0; i < lengthArrayString; i++){
-    if (arrayString[i].length < maxLengthString){
+    if (arrayString[i].Length <= maxLengthString){
         count++;
     }
 }
 ```
-*arrayString[i].length* - возвращает длину строки массива arrayString.
+*arrayString[i].Length* - возвращает длину строки массива arrayString.
 
 ### Создание нового массива и добавление строк в него
 
@@ -66,7 +67,7 @@ string[] newArrayString = new string[count];
 ```
 while (j < count){
     for (int i = 0; i < lengthArrayString; i++){
-    if (arrayString[i].length < maxLengthString){
+    if (arrayString[i].Length <= maxLengthString){
         newArrayString[j] = arrayString[i];
         j++;
     }
@@ -74,7 +75,13 @@ while (j < count){
 }
 ```
 ### Вывод нового массива
-С помощью команды *Console.WriteLine* выведем новый массив
+С помощью команды *Console.Write* и цикла *for* выведем новый массив
 ```
-Console.WriteLine(newArrayString)
+Console.WriteLine("Результат: ")
+for (int i = 0; i < newArrayString.Length; i ++){
+Console.Write($"{newArrayString[i]} ");
+}
 ```
+
+
+
